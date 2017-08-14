@@ -1,0 +1,6 @@
+{
+	'STR_MANUFACTURER' : 	"QEMU & RHUL (USBDT)",
+	'STR_PRODUCT' : 	"iowarrior",
+	'STR_SERIALNUMBER': 	"0001",
+	'STR_CONFIG' : 		"Generic USB Config"
+}

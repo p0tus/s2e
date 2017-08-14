@@ -1,0 +1,6 @@
+{
+	'STR_MANUFACTURER' : 	"QEMU",
+	'STR_PRODUCT' : 	"legousbtower (USBDT)",
+	'STR_SERIALNUMBER': 	"42",
+	'STR_CONFIG' : 		"Generic USB Config"
+}

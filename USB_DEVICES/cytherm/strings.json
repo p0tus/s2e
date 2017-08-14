@@ -1,0 +1,6 @@
+{
+	'STR_MANUFACTURER' : 	"QEMU",
+	'STR_PRODUCT' : 	"Cytherm (USBDT)",
+	'STR_SERIALNUMBER': 	"4141414",
+	'STR_CONFIG' : 		"Generic USB Config"
+}

@@ -1,0 +1,6 @@
+{
+	'STR_MANUFACTURER' : 	"QEMU",
+	'STR_PRODUCT' : 	"appledisplay (USBDT)",
+	'STR_SERIALNUMBER': 	"0xdeadbeef",
+	'STR_CONFIG' : 		"Generic USB Config"
+}

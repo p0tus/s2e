@@ -1,0 +1,27 @@
+{
+    'bInterfaceNumber' :               0,
+    'bNumEndpoints' :                  2,
+    'bInterfaceClass' :                2,
+    'bInterfaceSubClass' :             6,
+    'bInterfaceProtocol' :             0,
+    'ndesc' :                          1,
+    'descs' : 	[
+	{
+		'length' : 	9,
+		'data' : 	"090101000001013400"
+	}
+    ],
+    'eps' : [
+        {
+            'bEndpointAddress' :       129,
+            'bmAttributes' :           3,
+            'wMaxPacketSize' :         64,
+            'bInterval' :              255
+        }, {
+            'bEndpointAddress' :       1,
+            'bmAttributes' :           3,
+            'wMaxPacketSize' :         64,
+            'bInterval' :              255
+        }
+    ]
+}

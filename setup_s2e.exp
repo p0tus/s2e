@@ -1,0 +1,62 @@
+#!/usr/bin/expect
+
+#NB: Edit $MODULE_NAME to set target module
+set MODULE_NAME "airspy"
+
+#infinite timeout
+set timeout -1
+
+#spawn /root/USBDT/S2E/build/qemu-release/x86_64-softmmu/qemu-system-x86_64 /root/USBDT/s2e_disk_amd64.raw.s2e -cpu core2duo -m 1G -k en-gb -net none -nographic -usb
+spawn /root/USBDT/S2E/build/qemu-release/x86_64-softmmu/qemu-system-x86_64 /root/USBDT/s2e_disk_amd64.raw.s2e -cpu core2duo  -m 1G -k en-gb -net none -nographic -usb
+
+expect "usbdt login:"
+send "root\n"
+expect "Password:"
+send "toor\n"
+
+expect "root@usbdt:~#"
+#send "ts\n"
+send "cd ~/USBDT/SystemTap\n"
+expect "~/USBDT/SystemTap#"
+send "modprobe $MODULE_NAME\n"
+expect "~/USBDT/SystemTap#"
+
+send "../Scripts/get_kernel_module_address.sh $MODULE_NAME\n"
+expect -re "Address:(.*)0x(\[^,\]*)"
+set address $expect_out(0,string)
+
+expect -re "Size:(.*)\\d+"
+set size $expect_out(0,string)
+
+send "./STAP_RUN\n"
+
+expect "Loading TapSet"
+send_user "\nSleeping for 10 seconds\n"
+sleep 10
+
+#send_user "Switching to qemu monitor mode\n"
+
+#switch to monitor mode
+#send "c"
+#send ""; send "c"
+#send "\x01"; send "c"
+#send "\x01c"
+#send ; send "c"
+
+
+send "\x01c"
+expect "(qemu)"
+send "savevm ready\n"
+sleep 1
+expect "(qemu)"
+send "quit\n"
+
+send_user "/==== MODULE INFORMATION ====\\\n"
+send_user $address
+send_user "\n"
+send_user $size
+send_user "\n"
+send_user "\\====                    ====/\n"
+
+
+interact

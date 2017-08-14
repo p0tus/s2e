@@ -1,0 +1,15 @@
+{
+	'bcdUSB' : 		256,
+	'bMaxPacketSize0' : 	8,
+	'bNumConfigurations' : 	1,
+	'confs' : [
+		{
+			'bNumInterfaces' :	1,
+			'bConfigurationValue': 	1,
+			'iConfiguration': 	4,
+			'bmAttributes' : 	160,
+			'bMaxPower' : 		50,
+			'nif' : 		1
+		}
+	]
+}
